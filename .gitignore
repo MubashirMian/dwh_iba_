@@ -47,4 +47,5 @@ Thumbs.db
 
 Pharma.Supply.Chain.Dataset/
 *.xlsx
+!excel/*.xlsx
 *.docx
