@@ -44,3 +44,7 @@ pgdata/
 # OS specific
 .DS_Store
 Thumbs.db
+
+Pharma.Supply.Chain.Dataset/
+*.xlsx
+*.docx
