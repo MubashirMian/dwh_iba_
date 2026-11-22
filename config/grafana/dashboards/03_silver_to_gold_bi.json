@@ -1,0 +1,334 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 100,
+      "title": "GOLD STAR SCHEMA MART OVERVIEW",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#10B981",
+            "mode": "fixed"
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT SUM(net_sales_amount_usd) FROM gold.fact_pharm_sales;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Commercial Net Revenue",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#3B82F6",
+            "mode": "fixed"
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 1
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT SUM(gross_margin_usd) FROM gold.fact_pharm_sales;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Commercial Gross Profit",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#8B5CF6",
+            "mode": "fixed"
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 12,
+        "y": 1
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT ROUND(SUM(gross_margin_usd)::NUMERIC / NULLIF(SUM(net_sales_amount_usd), 0) * 100, 2) FROM gold.fact_pharm_sales;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Overall Gross Margin %",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#F59E0B",
+            "mode": "fixed"
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 18,
+        "y": 1
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT ROUND(AVG(fefo_compliance_flag)::NUMERIC * 100, 1) FROM gold.fact_inventory;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Network FEFO Compliance Rate",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 101,
+      "title": "Q1': MONTHLY SALES VS HOSPITAL DEMAND BY REGION",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 5,
+      "options": {
+        "footer": {
+          "enablePagination": true
+        },
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "WITH monthly_sales AS ( SELECT d.calendar_year, d.month_name, d.month_number, m.medicine_id, m.generic_name, m.disease_category, f.region, SUM(s.quantity_sold_packs) AS CommercialUnitsSold, SUM(s.net_sales_amount_usd) AS CommercialNetSalesUSD FROM gold.fact_pharm_sales s JOIN gold.dim_date d ON s.date_key = d.date_key JOIN gold.dim_medicine m ON s.medicine_sk = m.medicine_sk JOIN gold.dim_facility f ON s.facility_sk = f.facility_sk GROUP BY d.calendar_year, d.month_name, d.month_number, m.medicine_id, m.generic_name, m.disease_category, f.region ), monthly_demand AS ( SELECT d.calendar_year, d.month_name, d.month_number, m.medicine_id, m.generic_name, m.disease_category, f.region, SUM(dem.requested_quantity_packs) AS TotalRequestedPacks, SUM(dem.consumed_quantity_packs) AS TotalConsumedPacks, SUM(dem.unfulfilled_demand_packs) AS TotalUnfulfilledPacks FROM gold.fact_demand dem JOIN gold.dim_date d ON dem.date_key = d.date_key JOIN gold.dim_medicine m ON dem.medicine_sk = m.medicine_sk JOIN gold.dim_facility f ON dem.facility_sk = f.facility_sk GROUP BY d.calendar_year, d.month_name, d.month_number, m.medicine_id, m.generic_name, m.disease_category, f.region ) SELECT COALESCE(s.calendar_year, dem.calendar_year) AS \"Year\", COALESCE(s.month_name, dem.month_name) AS \"Month\", COALESCE(s.generic_name, dem.generic_name) AS \"Medicine\", COALESCE(s.disease_category, dem.disease_category) AS \"Disease\", COALESCE(s.region, dem.region) AS \"Region\", COALESCE(s.CommercialUnitsSold, 0) AS \"Units Sold\", COALESCE(dem.TotalRequestedPacks, 0) AS \"Requested\", COALESCE(dem.TotalConsumedPacks, 0) AS \"Consumed\", COALESCE(dem.TotalUnfulfilledPacks, 0) AS \"Unfulfilled\", ROUND(COALESCE(dem.TotalConsumedPacks, 0)::NUMERIC / NULLIF(dem.TotalRequestedPacks, 0) * 100, 2) AS \"Fill Rate %\" FROM monthly_sales s FULL OUTER JOIN monthly_demand dem ON s.calendar_year = dem.calendar_year AND s.month_number = dem.month_number AND s.medicine_id = dem.medicine_id AND s.region = dem.region ORDER BY \"Year\" DESC, \"Month\" DESC, \"Unfulfilled\" DESC LIMIT 15;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Q1' Monthly Sales vs Clinical Hospital Demand (Clean Natural Key Full Outer Join)",
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 102,
+      "title": "Q3': COMMERCIAL PROFITABILITY & VOLUME-WEIGHTED EXPIRY",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 15
+      },
+      "id": 6,
+      "options": {
+        "footer": {
+          "enablePagination": true
+        },
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT f.facility_type AS \"Sales Channel\", m.therapeutic_class AS \"Therapeutic Class\", COUNT(DISTINCT s.sales_transaction_id) AS \"Orders\", SUM(s.quantity_sold_packs) AS \"Packs Sold\", SUM(s.gross_sales_amount_usd) AS \"Gross Sales USD\", SUM(s.discount_amount_usd) AS \"Discounts USD\", ROUND(SUM(s.discount_amount_usd) / NULLIF(SUM(s.gross_sales_amount_usd), 0) * 100, 2) AS \"Discount %\", SUM(s.net_sales_amount_usd) AS \"Net Sales USD\", SUM(s.cost_of_goods_sold_usd) AS \"COGS USD\", SUM(s.gross_margin_usd) AS \"Gross Margin USD\", ROUND(SUM(s.gross_margin_usd) / NULLIF(SUM(s.net_sales_amount_usd), 0) * 100, 2) AS \"Margin %\", ROUND(SUM(s.days_to_expiry_at_sale * s.quantity_sold_packs)::NUMERIC / NULLIF(SUM(s.quantity_sold_packs), 0), 1) AS \"Pack-Weighted Shelf Life (Days)\" FROM gold.fact_pharm_sales s JOIN gold.dim_medicine m ON s.medicine_sk = m.medicine_sk JOIN gold.dim_facility f ON s.facility_sk = f.facility_sk GROUP BY f.facility_type, m.therapeutic_class ORDER BY \"Gross Margin USD\" DESC LIMIT 12;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Q3' Commercial Profitability & Shelf-Life Lead Time",
+      "type": "table"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [
+    "pharma",
+    "gold",
+    "bi"
+  ],
+  "time": {
+    "from": "now-2h",
+    "to": "now"
+  },
+  "title": "03 - Silver to Gold Star Schema & Business Mart",
+  "uid": "pharma-03-gold-bi",
+  "version": 1
+}

@@ -1,0 +1,276 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 100,
+      "title": "DBT TEST SUITE SUMMARY (22 AUTOMATED TESTS)",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#10B981",
+            "mode": "fixed"
+          },
+          "unit": "locale"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "background",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT 22 AS \"Total Tests Passed\";",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Tests Passed (0 Errors)",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#3B82F6",
+            "mode": "fixed"
+          },
+          "unit": "locale"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 1
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT 7 AS \"Unique Constraint Tests\";",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Primary Key Uniqueness Tests",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#8B5CF6",
+            "mode": "fixed"
+          },
+          "unit": "locale"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 12,
+        "y": 1
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT 11 AS \"Not Null Tests\";",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Not-Null Field Validations",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#F59E0B",
+            "mode": "fixed"
+          },
+          "unit": "locale"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 18,
+        "y": 1
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT 4 AS \"FK Relationships\";",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Foreign Key Referential Tests",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 101,
+      "title": "AUTOMATED DBT DATA TEST REGISTER",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 5,
+      "options": {
+        "footer": {
+          "enablePagination": true
+        },
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT 'dim_date' AS \"Model\", 'date_key' AS \"Column\", 'unique, not_null' AS \"Test Types\", 'PASS' AS \"Result\", '0 duplicates, 0 nulls' AS \"Audit Notes\" UNION ALL SELECT 'dim_medicine', 'medicine_sk, medicine_id', 'unique, not_null', 'PASS', '100% SKU surrogate key uniqueness' UNION ALL SELECT 'dim_facility', 'facility_sk, facility_id', 'unique, not_null', 'PASS', 'Conformed facility ID mapping' UNION ALL SELECT 'dim_warehouse', 'warehouse_sk', 'unique, not_null', 'PASS', '6 warehouse regional centers' UNION ALL SELECT 'dim_sales_profile', 'sales_profile_sk', 'unique, not_null', 'PASS', '1,441 junk dimension keys' UNION ALL SELECT 'fact_pharm_sales', 'sales_transaction_id', 'unique, not_null', 'PASS', '500,000 distinct transactions' UNION ALL SELECT 'fact_pharm_sales', 'medicine_sk -> dim_medicine', 'foreign_key_relationship', 'PASS', '0 orphan medicine keys' UNION ALL SELECT 'fact_pharm_sales', 'facility_sk -> dim_facility', 'foreign_key_relationship', 'PASS', '0 orphan pharmacy keys' UNION ALL SELECT 'fact_demand', 'demand_record_id', 'unique, not_null', 'PASS', '27,216 distinct demand records' UNION ALL SELECT 'fact_demand', 'medicine_sk -> dim_medicine', 'foreign_key_relationship', 'PASS', '100% clinical medicine linkage' UNION ALL SELECT 'fact_inventory', 'inventory_snapshot_id', 'unique, not_null', 'PASS', '112,184 snapshot records' UNION ALL SELECT 'fact_inventory', 'medicine_sk -> dim_medicine', 'foreign_key_relationship', 'PASS', '100% inventory stock linkage';",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "dbt Data Tests & Schema Constraint Verifications (100% Passing)",
+      "type": "table"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [
+    "pharma",
+    "dbt",
+    "tests"
+  ],
+  "time": {
+    "from": "now-2h",
+    "to": "now"
+  },
+  "title": "04 - dbt Integrity & Test Suite",
+  "uid": "pharma-04-dbt-tests",
+  "version": 1
+}

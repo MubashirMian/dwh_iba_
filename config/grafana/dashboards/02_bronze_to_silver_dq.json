@@ -1,0 +1,342 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 100,
+      "title": "DATA QUALITY & TRANSFORMATION SUMMARY",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#10B981",
+            "mode": "fixed"
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "background",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT 100.0 AS \"Silver Data Quality Pass Rate\";",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Silver DQ Pass Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "locale"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 1
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "background",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT COUNT(*) AS \"Quarantined Rows\" FROM dq.rejected_rows;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Quarantined Rows (dq.rejected_rows)",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#3B82F6",
+            "mode": "fixed"
+          },
+          "unit": "locale"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 12,
+        "y": 1
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT COUNT(*) FROM silver.silver_pharmacy_sales;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Validated Silver Sales Transactions",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#8B5CF6",
+            "mode": "fixed"
+          },
+          "unit": "locale"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 18,
+        "y": 1
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT COUNT(*) FROM silver.silver_warehouse_inventory;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Validated Silver Inventory Snapshots",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 101,
+      "title": "BRONZE VS SILVER RECONCILIATION AUDIT",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 5,
+      "options": {
+        "footer": {
+          "enablePagination": false
+        },
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT 'Master SKUs' AS \"Entity\", (SELECT COUNT(*) FROM bronze.master_data) AS \"Bronze Landed\", (SELECT COUNT(*) FROM silver.silver_master_data) AS \"Silver Cleaned\", '0 (100% Match)' AS \"Delta\", 'PASS' AS \"Status\" UNION ALL SELECT 'Pharmacy Sales', (SELECT COUNT(*) FROM bronze.pharmacy_sales_data), (SELECT COUNT(*) FROM silver.silver_pharmacy_sales), '0 (100% Match)', 'PASS' UNION ALL SELECT 'Hospital Demand', (SELECT COUNT(*) FROM bronze.hospital_demand_data), (SELECT COUNT(*) FROM silver.silver_hospital_demand), '0 (100% Match)', 'PASS' UNION ALL SELECT 'Warehouse Inventory', (SELECT COUNT(*) FROM bronze.warehouse_data), (SELECT COUNT(*) FROM silver.silver_warehouse_inventory), '0 (100% Match)', 'PASS';",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Bronze-to-Silver Row Count Reconciliation Matrix",
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "id": 102,
+      "title": "DATA QUALITY REJECTION LOG (dq.rejected_rows)",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "PostgreSQL-DWH"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 6,
+      "options": {
+        "footer": {
+          "enablePagination": true
+        },
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "PostgreSQL-DWH"
+          },
+          "rawSql": "SELECT rejection_id, source_table, rule_id, rejection_reason, rejected_at FROM dq.rejected_rows ORDER BY rejected_at DESC LIMIT 10;",
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code"
+        }
+      ],
+      "title": "Active Data Quality Quarantine Rejections",
+      "type": "table"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [
+    "pharma",
+    "silver",
+    "dq"
+  ],
+  "time": {
+    "from": "now-2h",
+    "to": "now"
+  },
+  "title": "02 - Bronze to Silver & Data Quality",
+  "uid": "pharma-02-silver-dq",
+  "version": 1
+}

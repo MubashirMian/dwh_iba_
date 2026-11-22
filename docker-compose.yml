@@ -28,7 +28,7 @@ services:
     container_name: pharma-tools
     volumes:
       - ./:/workspace
-      - ./data/source:/workspace/data/source:ro
+      - ./data/source:/workspace/data/source
       - ./data/scratch:/workspace/data/scratch
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-pharma_admin}
@@ -36,6 +36,28 @@ services:
       - POSTGRES_DB=${POSTGRES_DB:-dwh}
       - POSTGRES_HOST=postgres
       - POSTGRES_PORT=5432
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - pharma-net
+
+  dbt-docs:
+    image: pharma-tools:1.0.0
+    container_name: pharma-dbt-docs
+    restart: always
+    ports:
+      - "8085:8085"
+    volumes:
+      - ./:/workspace
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-pharma_admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-pharma_secret_pw}
+      - POSTGRES_DB=${POSTGRES_DB:-dwh}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+    working_dir: /workspace/dbt
+    command: bash -c "dbt docs generate --profiles-dir . && python -m http.server 8085 --directory target"
     depends_on:
       postgres:
         condition: service_healthy

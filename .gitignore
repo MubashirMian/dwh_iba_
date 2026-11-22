@@ -45,6 +45,32 @@ pgdata/
 .DS_Store
 Thumbs.db
 
+# Excel files
+2 sdi excel.md
+DAWH_DWH_Pharma_ColdChain_Sales_De*
+DAWH.DWH.Template (1).xlsx
+DAWH.DWH.Template (1).xlsx.bak
+DAWH.DWH.Template_backup.xlsx
+
+# Agent instructions and documentation
+AGENT_INSTRUCTIONS_Pharma_ColdChain*
+AGENTS.md
+Instruction SDI.md
+Master playbook.md
+PROGRESS.md
+README.md
+
+# Project documentation
+Pharma_Cold_Chain_DAWH_BI_Project_Plan*
+Pharmacy_Sales_Demand_Fact_Constellatio*
+
+# SDI Agent prompts
+SDI_Agent_Prompts_Verify_then_Build_COR*
+SDI_Agent_Prompts_Verify_then_Build.md
+
+# Other
+Makefile
+
 Pharma.Supply.Chain.Dataset/
 *.xlsx
 !excel/*.xlsx

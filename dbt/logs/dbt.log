@@ -4642,3 +4642,440 @@ having count(*) > 1
 [0m15:07:41.197829 [debug] [MainThread]: Command `dbt test` succeeded at 15:07:41.197586 after 2.22 seconds
 [0m15:07:41.199027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77b2ab249290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77b2af2c21d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77b2af2c0e10>]}
 [0m15:07:41.200189 [debug] [MainThread]: Flushing usage events
+[0m16:14:25.538021 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f045f4ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f045f4a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f045f60d0>]}
+
+
+============================== 16:14:25.546169 | 9a34e91f-d640-4b32-b6c5-17a066438b6c ==============================
+[0m16:14:25.546169 [info ] [MainThread]: Running with dbt=1.8.7
+[0m16:14:25.547610 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'debug': 'False', 'warn_error': 'None', 'log_path': '/workspace/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt docs generate --profiles-dir .', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:14:25.773349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9a34e91f-d640-4b32-b6c5-17a066438b6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f048aff90>]}
+[0m16:14:25.812439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9a34e91f-d640-4b32-b6c5-17a066438b6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f060e0dd0>]}
+[0m16:14:25.814765 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m16:14:25.874545 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m16:14:26.287514 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:14:26.289008 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:14:26.317748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9a34e91f-d640-4b32-b6c5-17a066438b6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f037e8990>]}
+[0m16:14:26.386356 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9a34e91f-d640-4b32-b6c5-17a066438b6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f045004d0>]}
+[0m16:14:26.388407 [info ] [MainThread]: Found 12 models, 22 data tests, 430 macros
+[0m16:14:26.389882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a34e91f-d640-4b32-b6c5-17a066438b6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f037eac90>]}
+[0m16:14:26.394792 [info ] [MainThread]: 
+[0m16:14:26.397232 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m16:14:26.403985 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dwh_silver'
+[0m16:14:26.404953 [debug] [ThreadPool]: Acquiring new postgres connection 'list_dwh_gold'
+[0m16:14:26.460502 [debug] [ThreadPool]: Using postgres connection "list_dwh_silver"
+[0m16:14:26.460975 [debug] [ThreadPool]: Using postgres connection "list_dwh_gold"
+[0m16:14:26.462644 [debug] [ThreadPool]: On list_dwh_silver: BEGIN
+[0m16:14:26.464591 [debug] [ThreadPool]: On list_dwh_gold: BEGIN
+[0m16:14:26.466188 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:14:26.467541 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:14:26.480638 [debug] [ThreadPool]: SQL status: BEGIN in 0.014 seconds
+[0m16:14:26.481053 [debug] [ThreadPool]: SQL status: BEGIN in 0.013 seconds
+[0m16:14:26.482176 [debug] [ThreadPool]: Using postgres connection "list_dwh_silver"
+[0m16:14:26.483479 [debug] [ThreadPool]: Using postgres connection "list_dwh_gold"
+[0m16:14:26.484563 [debug] [ThreadPool]: On list_dwh_silver: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "pharma_dwh", "target_name": "dev", "connection_name": "list_dwh_silver"} */
+select
+      'dwh' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'dwh' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'dwh' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+  
+[0m16:14:26.485364 [debug] [ThreadPool]: On list_dwh_gold: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "pharma_dwh", "target_name": "dev", "connection_name": "list_dwh_gold"} */
+select
+      'dwh' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'gold'
+    union all
+    select
+      'dwh' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'gold'
+    union all
+    select
+      'dwh' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'gold'
+  
+[0m16:14:26.493796 [debug] [ThreadPool]: SQL status: SELECT 8 in 0.007 seconds
+[0m16:14:26.494333 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.008 seconds
+[0m16:14:26.496506 [debug] [ThreadPool]: On list_dwh_gold: ROLLBACK
+[0m16:14:26.498517 [debug] [ThreadPool]: On list_dwh_silver: ROLLBACK
+[0m16:14:26.500130 [debug] [ThreadPool]: On list_dwh_gold: Close
+[0m16:14:26.500895 [debug] [ThreadPool]: On list_dwh_silver: Close
+[0m16:14:26.507568 [debug] [MainThread]: Using postgres connection "master"
+[0m16:14:26.508889 [debug] [MainThread]: On master: BEGIN
+[0m16:14:26.509902 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:14:26.516839 [debug] [MainThread]: SQL status: BEGIN in 0.007 seconds
+[0m16:14:26.517943 [debug] [MainThread]: Using postgres connection "master"
+[0m16:14:26.518900 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "pharma_dwh", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m16:14:26.561912 [debug] [MainThread]: SQL status: SELECT 8 in 0.042 seconds
+[0m16:14:26.564484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a34e91f-d640-4b32-b6c5-17a066438b6c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f03732810>]}
+[0m16:14:26.565961 [debug] [MainThread]: On master: ROLLBACK
+[0m16:14:26.567623 [debug] [MainThread]: On master: Close
+[0m16:14:26.569407 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:14:26.570741 [info ] [MainThread]: 
+[0m16:14:26.581835 [debug] [Thread-1 (]: Began running node model.pharma_dwh.dim_date
+[0m16:14:26.582572 [debug] [Thread-2 (]: Began running node model.pharma_dwh.silver_hospital_demand
+[0m16:14:26.583040 [debug] [Thread-3 (]: Began running node model.pharma_dwh.silver_master_data
+[0m16:14:26.583321 [debug] [Thread-4 (]: Began running node model.pharma_dwh.silver_pharmacy_sales
+[0m16:14:26.584564 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dwh_silver, now model.pharma_dwh.dim_date)
+[0m16:14:26.585597 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_dwh_gold, now model.pharma_dwh.silver_hospital_demand)
+[0m16:14:26.587161 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.pharma_dwh.silver_master_data'
+[0m16:14:26.588598 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.pharma_dwh.silver_pharmacy_sales'
+[0m16:14:26.589531 [debug] [Thread-1 (]: Began compiling node model.pharma_dwh.dim_date
+[0m16:14:26.590364 [debug] [Thread-2 (]: Began compiling node model.pharma_dwh.silver_hospital_demand
+[0m16:14:26.591170 [debug] [Thread-3 (]: Began compiling node model.pharma_dwh.silver_master_data
+[0m16:14:26.591943 [debug] [Thread-4 (]: Began compiling node model.pharma_dwh.silver_pharmacy_sales
+[0m16:14:26.598108 [debug] [Thread-1 (]: Writing injected SQL for node "model.pharma_dwh.dim_date"
+[0m16:14:26.603897 [debug] [Thread-2 (]: Writing injected SQL for node "model.pharma_dwh.silver_hospital_demand"
+[0m16:14:26.611819 [debug] [Thread-3 (]: Writing injected SQL for node "model.pharma_dwh.silver_master_data"
+[0m16:14:26.620381 [debug] [Thread-4 (]: Writing injected SQL for node "model.pharma_dwh.silver_pharmacy_sales"
+[0m16:14:26.633853 [debug] [Thread-2 (]: Began executing node model.pharma_dwh.silver_hospital_demand
+[0m16:14:26.634484 [debug] [Thread-4 (]: Began executing node model.pharma_dwh.silver_pharmacy_sales
+[0m16:14:26.634955 [debug] [Thread-1 (]: Began executing node model.pharma_dwh.dim_date
+[0m16:14:26.635346 [debug] [Thread-3 (]: Began executing node model.pharma_dwh.silver_master_data
+[0m16:14:26.637308 [debug] [Thread-2 (]: Finished running node model.pharma_dwh.silver_hospital_demand
+[0m16:14:26.639102 [debug] [Thread-4 (]: Finished running node model.pharma_dwh.silver_pharmacy_sales
+[0m16:14:26.640851 [debug] [Thread-1 (]: Finished running node model.pharma_dwh.dim_date
+[0m16:14:26.642900 [debug] [Thread-3 (]: Finished running node model.pharma_dwh.silver_master_data
+[0m16:14:26.644760 [debug] [Thread-2 (]: Began running node model.pharma_dwh.silver_warehouse_inventory
+[0m16:14:26.647019 [debug] [Thread-4 (]: Began running node model.pharma_dwh.dim_facility
+[0m16:14:26.647787 [debug] [Thread-1 (]: Began running node model.pharma_dwh.dim_sales_profile
+[0m16:14:26.648840 [debug] [Thread-3 (]: Began running node test.pharma_dwh.not_null_dim_date_date_key.881d0a31b6
+[0m16:14:26.649694 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.silver_hospital_demand, now model.pharma_dwh.silver_warehouse_inventory)
+[0m16:14:26.650482 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.silver_pharmacy_sales, now model.pharma_dwh.dim_facility)
+[0m16:14:26.651293 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.dim_date, now model.pharma_dwh.dim_sales_profile)
+[0m16:14:26.652049 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.silver_master_data, now test.pharma_dwh.not_null_dim_date_date_key.881d0a31b6)
+[0m16:14:26.652905 [debug] [Thread-2 (]: Began compiling node model.pharma_dwh.silver_warehouse_inventory
+[0m16:14:26.653713 [debug] [Thread-4 (]: Began compiling node model.pharma_dwh.dim_facility
+[0m16:14:26.654457 [debug] [Thread-1 (]: Began compiling node model.pharma_dwh.dim_sales_profile
+[0m16:14:26.655167 [debug] [Thread-3 (]: Began compiling node test.pharma_dwh.not_null_dim_date_date_key.881d0a31b6
+[0m16:14:26.660387 [debug] [Thread-2 (]: Writing injected SQL for node "model.pharma_dwh.silver_warehouse_inventory"
+[0m16:14:26.664256 [debug] [Thread-4 (]: Writing injected SQL for node "model.pharma_dwh.dim_facility"
+[0m16:14:26.667392 [debug] [Thread-1 (]: Writing injected SQL for node "model.pharma_dwh.dim_sales_profile"
+[0m16:14:26.676383 [debug] [Thread-3 (]: Writing injected SQL for node "test.pharma_dwh.not_null_dim_date_date_key.881d0a31b6"
+[0m16:14:26.689690 [debug] [Thread-1 (]: Began executing node model.pharma_dwh.dim_sales_profile
+[0m16:14:26.692045 [debug] [Thread-1 (]: Finished running node model.pharma_dwh.dim_sales_profile
+[0m16:14:26.692598 [debug] [Thread-4 (]: Began executing node model.pharma_dwh.dim_facility
+[0m16:14:26.693145 [debug] [Thread-2 (]: Began executing node model.pharma_dwh.silver_warehouse_inventory
+[0m16:14:26.693480 [debug] [Thread-3 (]: Began executing node test.pharma_dwh.not_null_dim_date_date_key.881d0a31b6
+[0m16:14:26.694944 [debug] [Thread-1 (]: Began running node test.pharma_dwh.unique_dim_date_date_key.0869fd48f9
+[0m16:14:26.696738 [debug] [Thread-4 (]: Finished running node model.pharma_dwh.dim_facility
+[0m16:14:26.699200 [debug] [Thread-2 (]: Finished running node model.pharma_dwh.silver_warehouse_inventory
+[0m16:14:26.701555 [debug] [Thread-3 (]: Finished running node test.pharma_dwh.not_null_dim_date_date_key.881d0a31b6
+[0m16:14:26.703100 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.dim_sales_profile, now test.pharma_dwh.unique_dim_date_date_key.0869fd48f9)
+[0m16:14:26.704651 [debug] [Thread-4 (]: Began running node model.pharma_dwh.dim_medicine
+[0m16:14:26.705903 [debug] [Thread-2 (]: Began running node test.pharma_dwh.not_null_dim_sales_profile_sales_profile_sk.289b1fb54b
+[0m16:14:26.706946 [debug] [Thread-3 (]: Began running node test.pharma_dwh.unique_dim_sales_profile_sales_profile_sk.197d085fdc
+[0m16:14:26.707719 [debug] [Thread-1 (]: Began compiling node test.pharma_dwh.unique_dim_date_date_key.0869fd48f9
+[0m16:14:26.708476 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.dim_facility, now model.pharma_dwh.dim_medicine)
+[0m16:14:26.709302 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.silver_warehouse_inventory, now test.pharma_dwh.not_null_dim_sales_profile_sales_profile_sk.289b1fb54b)
+[0m16:14:26.710160 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.not_null_dim_date_date_key.881d0a31b6, now test.pharma_dwh.unique_dim_sales_profile_sales_profile_sk.197d085fdc)
+[0m16:14:26.714933 [debug] [Thread-1 (]: Writing injected SQL for node "test.pharma_dwh.unique_dim_date_date_key.0869fd48f9"
+[0m16:14:26.715822 [debug] [Thread-4 (]: Began compiling node model.pharma_dwh.dim_medicine
+[0m16:14:26.716597 [debug] [Thread-2 (]: Began compiling node test.pharma_dwh.not_null_dim_sales_profile_sales_profile_sk.289b1fb54b
+[0m16:14:26.717364 [debug] [Thread-3 (]: Began compiling node test.pharma_dwh.unique_dim_sales_profile_sales_profile_sk.197d085fdc
+[0m16:14:26.720657 [debug] [Thread-4 (]: Writing injected SQL for node "model.pharma_dwh.dim_medicine"
+[0m16:14:26.723973 [debug] [Thread-2 (]: Writing injected SQL for node "test.pharma_dwh.not_null_dim_sales_profile_sales_profile_sk.289b1fb54b"
+[0m16:14:26.727271 [debug] [Thread-3 (]: Writing injected SQL for node "test.pharma_dwh.unique_dim_sales_profile_sales_profile_sk.197d085fdc"
+[0m16:14:26.729297 [debug] [Thread-1 (]: Began executing node test.pharma_dwh.unique_dim_date_date_key.0869fd48f9
+[0m16:14:26.731258 [debug] [Thread-1 (]: Finished running node test.pharma_dwh.unique_dim_date_date_key.0869fd48f9
+[0m16:14:26.732722 [debug] [Thread-1 (]: Began running node test.pharma_dwh.not_null_dim_facility_facility_id.37e6fc7f95
+[0m16:14:26.734045 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.unique_dim_date_date_key.0869fd48f9, now test.pharma_dwh.not_null_dim_facility_facility_id.37e6fc7f95)
+[0m16:14:26.735075 [debug] [Thread-1 (]: Began compiling node test.pharma_dwh.not_null_dim_facility_facility_id.37e6fc7f95
+[0m16:14:26.739124 [debug] [Thread-1 (]: Writing injected SQL for node "test.pharma_dwh.not_null_dim_facility_facility_id.37e6fc7f95"
+[0m16:14:26.741471 [debug] [Thread-3 (]: Began executing node test.pharma_dwh.unique_dim_sales_profile_sales_profile_sk.197d085fdc
+[0m16:14:26.742182 [debug] [Thread-2 (]: Began executing node test.pharma_dwh.not_null_dim_sales_profile_sales_profile_sk.289b1fb54b
+[0m16:14:26.742621 [debug] [Thread-4 (]: Began executing node model.pharma_dwh.dim_medicine
+[0m16:14:26.744248 [debug] [Thread-3 (]: Finished running node test.pharma_dwh.unique_dim_sales_profile_sales_profile_sk.197d085fdc
+[0m16:14:26.746360 [debug] [Thread-2 (]: Finished running node test.pharma_dwh.not_null_dim_sales_profile_sales_profile_sk.289b1fb54b
+[0m16:14:26.748150 [debug] [Thread-4 (]: Finished running node model.pharma_dwh.dim_medicine
+[0m16:14:26.749893 [debug] [Thread-3 (]: Began running node test.pharma_dwh.not_null_dim_facility_facility_sk.0b12eb6e88
+[0m16:14:26.751836 [debug] [Thread-2 (]: Began running node test.pharma_dwh.unique_dim_facility_facility_sk.f6dd1b62e7
+[0m16:14:26.753983 [debug] [Thread-4 (]: Began running node model.pharma_dwh.dim_warehouse
+[0m16:14:26.755856 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.unique_dim_sales_profile_sales_profile_sk.197d085fdc, now test.pharma_dwh.not_null_dim_facility_facility_sk.0b12eb6e88)
+[0m16:14:26.758066 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.not_null_dim_sales_profile_sales_profile_sk.289b1fb54b, now test.pharma_dwh.unique_dim_facility_facility_sk.f6dd1b62e7)
+[0m16:14:26.758827 [debug] [Thread-1 (]: Began executing node test.pharma_dwh.not_null_dim_facility_facility_id.37e6fc7f95
+[0m16:14:26.759866 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.dim_medicine, now model.pharma_dwh.dim_warehouse)
+[0m16:14:26.761397 [debug] [Thread-3 (]: Began compiling node test.pharma_dwh.not_null_dim_facility_facility_sk.0b12eb6e88
+[0m16:14:26.763566 [debug] [Thread-2 (]: Began compiling node test.pharma_dwh.unique_dim_facility_facility_sk.f6dd1b62e7
+[0m16:14:26.765084 [debug] [Thread-1 (]: Finished running node test.pharma_dwh.not_null_dim_facility_facility_id.37e6fc7f95
+[0m16:14:26.766261 [debug] [Thread-4 (]: Began compiling node model.pharma_dwh.dim_warehouse
+[0m16:14:26.770803 [debug] [Thread-3 (]: Writing injected SQL for node "test.pharma_dwh.not_null_dim_facility_facility_sk.0b12eb6e88"
+[0m16:14:26.776508 [debug] [Thread-2 (]: Writing injected SQL for node "test.pharma_dwh.unique_dim_facility_facility_sk.f6dd1b62e7"
+[0m16:14:26.778101 [debug] [Thread-1 (]: Began running node model.pharma_dwh.fact_demand
+[0m16:14:26.780899 [debug] [Thread-4 (]: Writing injected SQL for node "model.pharma_dwh.dim_warehouse"
+[0m16:14:26.783654 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.not_null_dim_facility_facility_id.37e6fc7f95, now model.pharma_dwh.fact_demand)
+[0m16:14:26.785461 [debug] [Thread-1 (]: Began compiling node model.pharma_dwh.fact_demand
+[0m16:14:26.792148 [debug] [Thread-1 (]: Writing injected SQL for node "model.pharma_dwh.fact_demand"
+[0m16:14:26.795972 [debug] [Thread-3 (]: Began executing node test.pharma_dwh.not_null_dim_facility_facility_sk.0b12eb6e88
+[0m16:14:26.796543 [debug] [Thread-2 (]: Began executing node test.pharma_dwh.unique_dim_facility_facility_sk.f6dd1b62e7
+[0m16:14:26.798030 [debug] [Thread-3 (]: Finished running node test.pharma_dwh.not_null_dim_facility_facility_sk.0b12eb6e88
+[0m16:14:26.798774 [debug] [Thread-4 (]: Began executing node model.pharma_dwh.dim_warehouse
+[0m16:14:26.800052 [debug] [Thread-2 (]: Finished running node test.pharma_dwh.unique_dim_facility_facility_sk.f6dd1b62e7
+[0m16:14:26.801363 [debug] [Thread-3 (]: Began running node test.pharma_dwh.not_null_dim_medicine_medicine_id.49d4d81c90
+[0m16:14:26.804155 [debug] [Thread-4 (]: Finished running node model.pharma_dwh.dim_warehouse
+[0m16:14:26.806632 [debug] [Thread-2 (]: Began running node test.pharma_dwh.not_null_dim_medicine_medicine_sk.a3d496e11b
+[0m16:14:26.807604 [debug] [Thread-1 (]: Began executing node model.pharma_dwh.fact_demand
+[0m16:14:26.808729 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.not_null_dim_facility_facility_sk.0b12eb6e88, now test.pharma_dwh.not_null_dim_medicine_medicine_id.49d4d81c90)
+[0m16:14:26.809906 [debug] [Thread-4 (]: Began running node test.pharma_dwh.unique_dim_medicine_medicine_sk.bc3067ea53
+[0m16:14:26.811021 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.unique_dim_facility_facility_sk.f6dd1b62e7, now test.pharma_dwh.not_null_dim_medicine_medicine_sk.a3d496e11b)
+[0m16:14:26.812227 [debug] [Thread-1 (]: Finished running node model.pharma_dwh.fact_demand
+[0m16:14:26.813320 [debug] [Thread-3 (]: Began compiling node test.pharma_dwh.not_null_dim_medicine_medicine_id.49d4d81c90
+[0m16:14:26.814224 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.dim_warehouse, now test.pharma_dwh.unique_dim_medicine_medicine_sk.bc3067ea53)
+[0m16:14:26.815138 [debug] [Thread-2 (]: Began compiling node test.pharma_dwh.not_null_dim_medicine_medicine_sk.a3d496e11b
+[0m16:14:26.816335 [debug] [Thread-1 (]: Began running node model.pharma_dwh.fact_inventory
+[0m16:14:26.821240 [debug] [Thread-3 (]: Writing injected SQL for node "test.pharma_dwh.not_null_dim_medicine_medicine_id.49d4d81c90"
+[0m16:14:26.822436 [debug] [Thread-4 (]: Began compiling node test.pharma_dwh.unique_dim_medicine_medicine_sk.bc3067ea53
+[0m16:14:26.825974 [debug] [Thread-2 (]: Writing injected SQL for node "test.pharma_dwh.not_null_dim_medicine_medicine_sk.a3d496e11b"
+[0m16:14:26.827002 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.fact_demand, now model.pharma_dwh.fact_inventory)
+[0m16:14:26.830777 [debug] [Thread-4 (]: Writing injected SQL for node "test.pharma_dwh.unique_dim_medicine_medicine_sk.bc3067ea53"
+[0m16:14:26.832533 [debug] [Thread-1 (]: Began compiling node model.pharma_dwh.fact_inventory
+[0m16:14:26.839472 [debug] [Thread-1 (]: Writing injected SQL for node "model.pharma_dwh.fact_inventory"
+[0m16:14:26.841867 [debug] [Thread-4 (]: Began executing node test.pharma_dwh.unique_dim_medicine_medicine_sk.bc3067ea53
+[0m16:14:26.842338 [debug] [Thread-3 (]: Began executing node test.pharma_dwh.not_null_dim_medicine_medicine_id.49d4d81c90
+[0m16:14:26.842725 [debug] [Thread-2 (]: Began executing node test.pharma_dwh.not_null_dim_medicine_medicine_sk.a3d496e11b
+[0m16:14:26.844279 [debug] [Thread-4 (]: Finished running node test.pharma_dwh.unique_dim_medicine_medicine_sk.bc3067ea53
+[0m16:14:26.845964 [debug] [Thread-3 (]: Finished running node test.pharma_dwh.not_null_dim_medicine_medicine_id.49d4d81c90
+[0m16:14:26.847626 [debug] [Thread-2 (]: Finished running node test.pharma_dwh.not_null_dim_medicine_medicine_sk.a3d496e11b
+[0m16:14:26.849052 [debug] [Thread-4 (]: Began running node model.pharma_dwh.fact_pharm_sales
+[0m16:14:26.850148 [debug] [Thread-3 (]: Began running node test.pharma_dwh.not_null_dim_warehouse_warehouse_sk.258684c672
+[0m16:14:26.851101 [debug] [Thread-2 (]: Began running node test.pharma_dwh.unique_dim_warehouse_warehouse_sk.323ffda995
+[0m16:14:26.851988 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.unique_dim_medicine_medicine_sk.bc3067ea53, now model.pharma_dwh.fact_pharm_sales)
+[0m16:14:26.853085 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.not_null_dim_medicine_medicine_id.49d4d81c90, now test.pharma_dwh.not_null_dim_warehouse_warehouse_sk.258684c672)
+[0m16:14:26.854355 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.not_null_dim_medicine_medicine_sk.a3d496e11b, now test.pharma_dwh.unique_dim_warehouse_warehouse_sk.323ffda995)
+[0m16:14:26.854905 [debug] [Thread-1 (]: Began executing node model.pharma_dwh.fact_inventory
+[0m16:14:26.855612 [debug] [Thread-4 (]: Began compiling node model.pharma_dwh.fact_pharm_sales
+[0m16:14:26.856464 [debug] [Thread-3 (]: Began compiling node test.pharma_dwh.not_null_dim_warehouse_warehouse_sk.258684c672
+[0m16:14:26.857232 [debug] [Thread-2 (]: Began compiling node test.pharma_dwh.unique_dim_warehouse_warehouse_sk.323ffda995
+[0m16:14:26.858314 [debug] [Thread-1 (]: Finished running node model.pharma_dwh.fact_inventory
+[0m16:14:26.862026 [debug] [Thread-4 (]: Writing injected SQL for node "model.pharma_dwh.fact_pharm_sales"
+[0m16:14:26.865710 [debug] [Thread-3 (]: Writing injected SQL for node "test.pharma_dwh.not_null_dim_warehouse_warehouse_sk.258684c672"
+[0m16:14:26.868918 [debug] [Thread-2 (]: Writing injected SQL for node "test.pharma_dwh.unique_dim_warehouse_warehouse_sk.323ffda995"
+[0m16:14:26.870398 [debug] [Thread-1 (]: Began running node test.pharma_dwh.not_null_fact_demand_demand_record_id.e0ecffa59a
+[0m16:14:26.873879 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.fact_inventory, now test.pharma_dwh.not_null_fact_demand_demand_record_id.e0ecffa59a)
+[0m16:14:26.874862 [debug] [Thread-1 (]: Began compiling node test.pharma_dwh.not_null_fact_demand_demand_record_id.e0ecffa59a
+[0m16:14:26.879476 [debug] [Thread-1 (]: Writing injected SQL for node "test.pharma_dwh.not_null_fact_demand_demand_record_id.e0ecffa59a"
+[0m16:14:26.882353 [debug] [Thread-3 (]: Began executing node test.pharma_dwh.not_null_dim_warehouse_warehouse_sk.258684c672
+[0m16:14:26.882767 [debug] [Thread-2 (]: Began executing node test.pharma_dwh.unique_dim_warehouse_warehouse_sk.323ffda995
+[0m16:14:26.883165 [debug] [Thread-4 (]: Began executing node model.pharma_dwh.fact_pharm_sales
+[0m16:14:26.884649 [debug] [Thread-3 (]: Finished running node test.pharma_dwh.not_null_dim_warehouse_warehouse_sk.258684c672
+[0m16:14:26.886446 [debug] [Thread-2 (]: Finished running node test.pharma_dwh.unique_dim_warehouse_warehouse_sk.323ffda995
+[0m16:14:26.889063 [debug] [Thread-4 (]: Finished running node model.pharma_dwh.fact_pharm_sales
+[0m16:14:26.890486 [debug] [Thread-3 (]: Began running node test.pharma_dwh.relationships_fact_demand_medicine_sk__medicine_sk__ref_dim_medicine_.d295a7c10c
+[0m16:14:26.890971 [debug] [Thread-1 (]: Began executing node test.pharma_dwh.not_null_fact_demand_demand_record_id.e0ecffa59a
+[0m16:14:26.891724 [debug] [Thread-2 (]: Began running node test.pharma_dwh.unique_fact_demand_demand_record_id.d3db3fd8dd
+[0m16:14:26.892624 [debug] [Thread-4 (]: Began running node test.pharma_dwh.not_null_fact_inventory_inventory_snapshot_id.38e2dfa2f4
+[0m16:14:26.893669 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.not_null_dim_warehouse_warehouse_sk.258684c672, now test.pharma_dwh.relationships_fact_demand_medicine_sk__medicine_sk__ref_dim_medicine_.d295a7c10c)
+[0m16:14:26.894933 [debug] [Thread-1 (]: Finished running node test.pharma_dwh.not_null_fact_demand_demand_record_id.e0ecffa59a
+[0m16:14:26.895874 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.unique_dim_warehouse_warehouse_sk.323ffda995, now test.pharma_dwh.unique_fact_demand_demand_record_id.d3db3fd8dd)
+[0m16:14:26.896752 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.pharma_dwh.fact_pharm_sales, now test.pharma_dwh.not_null_fact_inventory_inventory_snapshot_id.38e2dfa2f4)
+[0m16:14:26.897568 [debug] [Thread-3 (]: Began compiling node test.pharma_dwh.relationships_fact_demand_medicine_sk__medicine_sk__ref_dim_medicine_.d295a7c10c
+[0m16:14:26.898415 [debug] [Thread-1 (]: Began running node test.pharma_dwh.relationships_fact_inventory_medicine_sk__medicine_sk__ref_dim_medicine_.1c0a413a46
+[0m16:14:26.899212 [debug] [Thread-2 (]: Began compiling node test.pharma_dwh.unique_fact_demand_demand_record_id.d3db3fd8dd
+[0m16:14:26.900046 [debug] [Thread-4 (]: Began compiling node test.pharma_dwh.not_null_fact_inventory_inventory_snapshot_id.38e2dfa2f4
+[0m16:14:26.908527 [debug] [Thread-3 (]: Writing injected SQL for node "test.pharma_dwh.relationships_fact_demand_medicine_sk__medicine_sk__ref_dim_medicine_.d295a7c10c"
+[0m16:14:26.909527 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.not_null_fact_demand_demand_record_id.e0ecffa59a, now test.pharma_dwh.relationships_fact_inventory_medicine_sk__medicine_sk__ref_dim_medicine_.1c0a413a46)
+[0m16:14:26.912765 [debug] [Thread-2 (]: Writing injected SQL for node "test.pharma_dwh.unique_fact_demand_demand_record_id.d3db3fd8dd"
+[0m16:14:26.915821 [debug] [Thread-4 (]: Writing injected SQL for node "test.pharma_dwh.not_null_fact_inventory_inventory_snapshot_id.38e2dfa2f4"
+[0m16:14:26.917602 [debug] [Thread-1 (]: Began compiling node test.pharma_dwh.relationships_fact_inventory_medicine_sk__medicine_sk__ref_dim_medicine_.1c0a413a46
+[0m16:14:26.923966 [debug] [Thread-1 (]: Writing injected SQL for node "test.pharma_dwh.relationships_fact_inventory_medicine_sk__medicine_sk__ref_dim_medicine_.1c0a413a46"
+[0m16:14:26.930945 [debug] [Thread-3 (]: Began executing node test.pharma_dwh.relationships_fact_demand_medicine_sk__medicine_sk__ref_dim_medicine_.d295a7c10c
+[0m16:14:26.933151 [debug] [Thread-3 (]: Finished running node test.pharma_dwh.relationships_fact_demand_medicine_sk__medicine_sk__ref_dim_medicine_.d295a7c10c
+[0m16:14:26.933713 [debug] [Thread-4 (]: Began executing node test.pharma_dwh.not_null_fact_inventory_inventory_snapshot_id.38e2dfa2f4
+[0m16:14:26.934212 [debug] [Thread-2 (]: Began executing node test.pharma_dwh.unique_fact_demand_demand_record_id.d3db3fd8dd
+[0m16:14:26.934648 [debug] [Thread-1 (]: Began executing node test.pharma_dwh.relationships_fact_inventory_medicine_sk__medicine_sk__ref_dim_medicine_.1c0a413a46
+[0m16:14:26.936064 [debug] [Thread-3 (]: Began running node test.pharma_dwh.unique_fact_inventory_inventory_snapshot_id.4e62d99c80
+[0m16:14:26.938772 [debug] [Thread-4 (]: Finished running node test.pharma_dwh.not_null_fact_inventory_inventory_snapshot_id.38e2dfa2f4
+[0m16:14:26.941120 [debug] [Thread-2 (]: Finished running node test.pharma_dwh.unique_fact_demand_demand_record_id.d3db3fd8dd
+[0m16:14:26.942827 [debug] [Thread-1 (]: Finished running node test.pharma_dwh.relationships_fact_inventory_medicine_sk__medicine_sk__ref_dim_medicine_.1c0a413a46
+[0m16:14:26.944034 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.relationships_fact_demand_medicine_sk__medicine_sk__ref_dim_medicine_.d295a7c10c, now test.pharma_dwh.unique_fact_inventory_inventory_snapshot_id.4e62d99c80)
+[0m16:14:26.945188 [debug] [Thread-4 (]: Began running node test.pharma_dwh.not_null_fact_pharm_sales_sales_transaction_id.ccbdf1f2a5
+[0m16:14:26.946214 [debug] [Thread-2 (]: Began running node test.pharma_dwh.relationships_fact_pharm_sales_facility_sk__facility_sk__ref_dim_facility_.7a1d9bec02
+[0m16:14:26.947049 [debug] [Thread-1 (]: Began running node test.pharma_dwh.relationships_fact_pharm_sales_medicine_sk__medicine_sk__ref_dim_medicine_.5cac38af1d
+[0m16:14:26.947729 [debug] [Thread-3 (]: Began compiling node test.pharma_dwh.unique_fact_inventory_inventory_snapshot_id.4e62d99c80
+[0m16:14:26.948444 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.not_null_fact_inventory_inventory_snapshot_id.38e2dfa2f4, now test.pharma_dwh.not_null_fact_pharm_sales_sales_transaction_id.ccbdf1f2a5)
+[0m16:14:26.949257 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.unique_fact_demand_demand_record_id.d3db3fd8dd, now test.pharma_dwh.relationships_fact_pharm_sales_facility_sk__facility_sk__ref_dim_facility_.7a1d9bec02)
+[0m16:14:26.950087 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.relationships_fact_inventory_medicine_sk__medicine_sk__ref_dim_medicine_.1c0a413a46, now test.pharma_dwh.relationships_fact_pharm_sales_medicine_sk__medicine_sk__ref_dim_medicine_.5cac38af1d)
+[0m16:14:26.953682 [debug] [Thread-3 (]: Writing injected SQL for node "test.pharma_dwh.unique_fact_inventory_inventory_snapshot_id.4e62d99c80"
+[0m16:14:26.955030 [debug] [Thread-4 (]: Began compiling node test.pharma_dwh.not_null_fact_pharm_sales_sales_transaction_id.ccbdf1f2a5
+[0m16:14:26.955921 [debug] [Thread-2 (]: Began compiling node test.pharma_dwh.relationships_fact_pharm_sales_facility_sk__facility_sk__ref_dim_facility_.7a1d9bec02
+[0m16:14:26.956712 [debug] [Thread-1 (]: Began compiling node test.pharma_dwh.relationships_fact_pharm_sales_medicine_sk__medicine_sk__ref_dim_medicine_.5cac38af1d
+[0m16:14:26.960647 [debug] [Thread-4 (]: Writing injected SQL for node "test.pharma_dwh.not_null_fact_pharm_sales_sales_transaction_id.ccbdf1f2a5"
+[0m16:14:26.964827 [debug] [Thread-2 (]: Writing injected SQL for node "test.pharma_dwh.relationships_fact_pharm_sales_facility_sk__facility_sk__ref_dim_facility_.7a1d9bec02"
+[0m16:14:26.968917 [debug] [Thread-1 (]: Writing injected SQL for node "test.pharma_dwh.relationships_fact_pharm_sales_medicine_sk__medicine_sk__ref_dim_medicine_.5cac38af1d"
+[0m16:14:26.970408 [debug] [Thread-3 (]: Began executing node test.pharma_dwh.unique_fact_inventory_inventory_snapshot_id.4e62d99c80
+[0m16:14:26.973423 [debug] [Thread-3 (]: Finished running node test.pharma_dwh.unique_fact_inventory_inventory_snapshot_id.4e62d99c80
+[0m16:14:26.974608 [debug] [Thread-3 (]: Began running node test.pharma_dwh.unique_fact_pharm_sales_sales_transaction_id.c5678e84ac
+[0m16:14:26.975713 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.pharma_dwh.unique_fact_inventory_inventory_snapshot_id.4e62d99c80, now test.pharma_dwh.unique_fact_pharm_sales_sales_transaction_id.c5678e84ac)
+[0m16:14:26.976850 [debug] [Thread-3 (]: Began compiling node test.pharma_dwh.unique_fact_pharm_sales_sales_transaction_id.c5678e84ac
+[0m16:14:26.980819 [debug] [Thread-3 (]: Writing injected SQL for node "test.pharma_dwh.unique_fact_pharm_sales_sales_transaction_id.c5678e84ac"
+[0m16:14:26.982336 [debug] [Thread-2 (]: Began executing node test.pharma_dwh.relationships_fact_pharm_sales_facility_sk__facility_sk__ref_dim_facility_.7a1d9bec02
+[0m16:14:26.982845 [debug] [Thread-4 (]: Began executing node test.pharma_dwh.not_null_fact_pharm_sales_sales_transaction_id.ccbdf1f2a5
+[0m16:14:26.983213 [debug] [Thread-1 (]: Began executing node test.pharma_dwh.relationships_fact_pharm_sales_medicine_sk__medicine_sk__ref_dim_medicine_.5cac38af1d
+[0m16:14:26.984716 [debug] [Thread-2 (]: Finished running node test.pharma_dwh.relationships_fact_pharm_sales_facility_sk__facility_sk__ref_dim_facility_.7a1d9bec02
+[0m16:14:26.986179 [debug] [Thread-4 (]: Finished running node test.pharma_dwh.not_null_fact_pharm_sales_sales_transaction_id.ccbdf1f2a5
+[0m16:14:26.987905 [debug] [Thread-1 (]: Finished running node test.pharma_dwh.relationships_fact_pharm_sales_medicine_sk__medicine_sk__ref_dim_medicine_.5cac38af1d
+[0m16:14:26.994294 [debug] [Thread-3 (]: Began executing node test.pharma_dwh.unique_fact_pharm_sales_sales_transaction_id.c5678e84ac
+[0m16:14:26.995565 [debug] [Thread-3 (]: Finished running node test.pharma_dwh.unique_fact_pharm_sales_sales_transaction_id.c5678e84ac
+[0m16:14:26.997577 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:14:26.998665 [debug] [MainThread]: Connection 'test.pharma_dwh.relationships_fact_pharm_sales_medicine_sk__medicine_sk__ref_dim_medicine_.5cac38af1d' was properly closed.
+[0m16:14:26.999692 [debug] [MainThread]: Connection 'test.pharma_dwh.relationships_fact_pharm_sales_facility_sk__facility_sk__ref_dim_facility_.7a1d9bec02' was properly closed.
+[0m16:14:27.000664 [debug] [MainThread]: Connection 'test.pharma_dwh.unique_fact_pharm_sales_sales_transaction_id.c5678e84ac' was properly closed.
+[0m16:14:27.001360 [debug] [MainThread]: Connection 'test.pharma_dwh.not_null_fact_pharm_sales_sales_transaction_id.ccbdf1f2a5' was properly closed.
+[0m16:14:27.004961 [debug] [MainThread]: Command end result
+[0m16:14:27.193793 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m16:14:27.194884 [info ] [MainThread]: Building catalog
+[0m16:14:27.204160 [debug] [ThreadPool]: Acquiring new postgres connection 'dwh.information_schema'
+[0m16:14:27.210538 [debug] [ThreadPool]: Using postgres connection "dwh.information_schema"
+[0m16:14:27.211520 [debug] [ThreadPool]: On dwh.information_schema: BEGIN
+[0m16:14:27.212226 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:14:27.219007 [debug] [ThreadPool]: SQL status: BEGIN in 0.007 seconds
+[0m16:14:27.220023 [debug] [ThreadPool]: Using postgres connection "dwh.information_schema"
+[0m16:14:27.220936 [debug] [ThreadPool]: On dwh.information_schema: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "pharma_dwh", "target_name": "dev", "connection_name": "dwh.information_schema"} */
+
+    
+    
+
+    select
+        'dwh' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('silver') and
+           upper(tbl.relname) = upper('silver_master_data')) or (upper(sch.nspname) = upper('gold') and
+           upper(tbl.relname) = upper('dim_facility')) or (upper(sch.nspname) = upper('gold') and
+           upper(tbl.relname) = upper('dim_sales_profile')) or (upper(sch.nspname) = upper('gold') and
+           upper(tbl.relname) = upper('dim_date')) or (upper(sch.nspname) = upper('silver') and
+           upper(tbl.relname) = upper('silver_warehouse_inventory')) or (upper(sch.nspname) = upper('gold') and
+           upper(tbl.relname) = upper('fact_pharm_sales')) or (upper(sch.nspname) = upper('silver') and
+           upper(tbl.relname) = upper('silver_hospital_demand')) or (upper(sch.nspname) = upper('gold') and
+           upper(tbl.relname) = upper('fact_inventory')) or (upper(sch.nspname) = upper('silver') and
+           upper(tbl.relname) = upper('silver_pharmacy_sales')) or (upper(sch.nspname) = upper('gold') and
+           upper(tbl.relname) = upper('fact_demand')) or (upper(sch.nspname) = upper('gold') and
+           upper(tbl.relname) = upper('dim_medicine')) or (upper(sch.nspname) = upper('gold') and
+           upper(tbl.relname) = upper('dim_warehouse')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m16:14:27.230977 [debug] [ThreadPool]: SQL status: SELECT 225 in 0.009 seconds
+[0m16:14:27.239967 [debug] [ThreadPool]: On dwh.information_schema: ROLLBACK
+[0m16:14:27.242128 [debug] [ThreadPool]: On dwh.information_schema: Close
+[0m16:14:27.331151 [info ] [MainThread]: Catalog written to /workspace/dbt/target/catalog.json
+[0m16:14:27.335457 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 1.8908138, "process_user_time": 2.192618, "process_kernel_time": 0.423347, "process_mem_max_rss": "118312", "process_in_blocks": "152376", "process_out_blocks": "0"}
+[0m16:14:27.337442 [debug] [MainThread]: Command `dbt docs generate` succeeded at 16:14:27.337198 after 1.89 seconds
+[0m16:14:27.338862 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m16:14:27.339621 [debug] [MainThread]: Connection 'dwh.information_schema' was properly closed.
+[0m16:14:27.340589 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f088be310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f047e10d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731f06073210>]}
+[0m16:14:27.341522 [debug] [MainThread]: Flushing usage events

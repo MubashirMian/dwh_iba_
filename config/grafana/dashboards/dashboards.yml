@@ -1,9 +1,9 @@
 apiVersion: 1
 
 providers:
-  - name: 'default'
+  - name: 'Pharma DWH Suite'
     orgId: 1
-    folder: 'Pharma DWH'
+    folder: 'Pharma DWH Platform'
     type: file
     disableDeletion: false
     updateIntervalSeconds: 10
