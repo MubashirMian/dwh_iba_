@@ -1,0 +1,13 @@
+pharma_dwh:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST', 'postgres') }}"
+      user: "{{ env_var('POSTGRES_USER', 'pharma_admin') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD', 'pharma_secret_pw') }}"
+      port: 5432
+      dbname: "{{ env_var('POSTGRES_DB', 'dwh') }}"
+      schema: public
+      threads: 4
+      keepalives_idle: 0

@@ -1,0 +1,19 @@
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select medicine_sk
+from "dwh"."gold"."dim_medicine"
+where medicine_sk is null
+
+
+
+      
+    ) dbt_internal_test

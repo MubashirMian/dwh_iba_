@@ -1,0 +1,42 @@
+-- silver_master_data.sql
+{{ config(materialized='view') }}
+
+SELECT
+    {{ clean_null('"medicineid"') }} AS medicine_id,
+    {{ clean_null('"internalsku"') }} AS internal_sku,
+    {{ clean_null('"gtin14"') }} AS gtin14,
+    {{ clean_null('"genericname"') }} AS generic_name,
+    {{ clean_null('"fictionalbrandname"') }} AS brand_name,
+    {{ clean_null('"diseasecategory"') }} AS disease_category,
+    {{ clean_null('"icd10category"') }} AS icd10_category,
+    {{ clean_null('"atccode"') }} AS atc_code,
+    {{ clean_null('"therapeuticclass"') }} AS therapeutic_class,
+    {{ clean_null('"dosageform"') }} AS dosage_form,
+    {{ clean_null('"strength"') }} AS strength,
+    {{ clean_null('"routeofadministration"') }} AS route_of_administration,
+    {{ clean_null('"packsize"') }}::INT AS pack_size,
+    {{ clean_null('"baseunitofmeasure"') }} AS base_uom,
+    {{ clean_null('"prescriptionclass"') }} AS prescription_class,
+    {{ clean_null('"controlledmedicineflag"') }} AS controlled_medicine_flag,
+    {{ clean_null('"coldchainflag"') }} AS cold_chain_flag,
+    {{ clean_null('"storagemintempc"') }}::NUMERIC(6, 2) AS storage_min_temp_c,
+    {{ clean_null('"storagemaxtempc"') }}::NUMERIC(6, 2) AS storage_max_temp_c,
+    {{ clean_null('"maxhumiditypct"') }}::NUMERIC(6, 2) AS max_humidity_pct,
+    {{ clean_null('"shelflifemonths"') }}::INT AS shelf_life_months,
+    {{ clean_null('"minimumremainingshelflifedays"') }}::INT AS min_remaining_shelf_life_days,
+    {{ clean_null('"primarysupplierid"') }} AS primary_supplier_id,
+    {{ clean_null('"primaryplantid"') }} AS primary_plant_id,
+    {{ clean_null('"manufacturingleadtimedays"') }}::INT AS manufacturing_lead_time_days,
+    {{ clean_null('"standardbatchsizepacks"') }}::INT AS standard_batch_size_packs,
+    {{ clean_null('"safetystockdays"') }}::INT AS safety_stock_days,
+    {{ clean_null('"reorderreviewcycledays"') }}::INT AS reorder_review_cycle_days,
+    {{ clean_null('"unitmanufacturingcostusd"') }}::NUMERIC(12, 2) AS unit_manufacturing_cost_usd,
+    {{ clean_null('"wholesalepriceusd"') }}::NUMERIC(12, 2) AS wholesale_price_usd,
+    {{ clean_null('"recommendedretailpriceusd"') }}::NUMERIC(12, 2) AS recommended_retail_price_usd,
+    {{ clean_null('"productstatus"') }} AS product_status,
+    {{ clean_null('"effectivefromdate"') }}::DATE AS effective_from_date,
+    {{ clean_null('"sourcesystem"') }} AS source_system,
+    _loaded_at,
+    _row_id
+FROM bronze.master_data
+WHERE {{ clean_null('"medicineid"') }} IS NOT NULL

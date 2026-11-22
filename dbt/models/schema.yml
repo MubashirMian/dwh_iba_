@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: dim_date
+    columns:
+      - name: date_key
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_medicine
+    columns:
+      - name: medicine_sk
+        data_tests:
+          - unique
+          - not_null
+      - name: medicine_id
+        data_tests:
+          - not_null
+
+  - name: dim_facility
+    columns:
+      - name: facility_sk
+        data_tests:
+          - unique
+          - not_null
+      - name: facility_id
+        data_tests:
+          - not_null
+
+  - name: dim_warehouse
+    columns:
+      - name: warehouse_sk
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_sales_profile
+    columns:
+      - name: sales_profile_sk
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fact_pharm_sales
+    columns:
+      - name: sales_transaction_id
+        data_tests:
+          - unique
+          - not_null
+      - name: medicine_sk
+        data_tests:
+          - relationships:
+              to: ref('dim_medicine')
+              field: medicine_sk
+      - name: facility_sk
+        data_tests:
+          - relationships:
+              to: ref('dim_facility')
+              field: facility_sk
+
+  - name: fact_demand
+    columns:
+      - name: demand_record_id
+        data_tests:
+          - unique
+          - not_null
+      - name: medicine_sk
+        data_tests:
+          - relationships:
+              to: ref('dim_medicine')
+              field: medicine_sk
+
+  - name: fact_inventory
+    columns:
+      - name: inventory_snapshot_id
+        data_tests:
+          - unique
+          - not_null
+      - name: medicine_sk
+        data_tests:
+          - relationships:
+              to: ref('dim_medicine')
+              field: medicine_sk
