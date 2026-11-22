@@ -1,0 +1,6 @@
+SalesChannel,PharmacyType,tx_count,hospital_id_count,total_packs
+Ecommerce,Chain Pharmacy,48736,0,57881.0
+Ecommerce,Independent Pharmacy,37024,0,44143.0
+Physical Pharmacy,Chain Pharmacy,173485,0,206680.0
+Physical Pharmacy,Hospital Pharmacy,109192,109192,129771.0
+Physical Pharmacy,Independent Pharmacy,131563,0,156299.0

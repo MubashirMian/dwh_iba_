@@ -1,0 +1,14 @@
+TherapeuticClass,TopMedicine,TotalUnitsSold,WarehouseName,WarehouseLotID,AvailableQuantityPacks,DaysToExpiry,ExpiryRiskCategory,StockoutFlag,FEFOComplianceFlag
+Antigout agent,Colchicine,11170.0,Western Distribution Center,WHLOT-0000949,3556,685,Healthy (>90d),0,0
+Atypical antipsychotic,Risperidone,6509.0,Midwest Distribution Center,WHLOT-0000806,0,1057,Healthy (>90d),0,0
+Fluoroquinolone antibiotic,Levofloxacin,13476.0,Southern Distribution Center,WHLOT-0000169,256,28,Critical (<30d),0,1
+Fluoroquinolone antibiotic,Levofloxacin,13476.0,Northeast Distribution Center,WHLOT-0000549,297,59,High Risk (31-60d),0,1
+ICS/LABA combination,Budesonide/Formoterol,10759.0,Southern Distribution Center,WHLOT-0000343,0,0,Critical (<30d),1,1
+ICS/LABA combination,Budesonide/Formoterol,10759.0,Northeast Distribution Center,WHLOT-0000342,0,0,Critical (<30d),1,1
+ICS/LABA combination,Budesonide/Formoterol,10759.0,Western Distribution Center,WHLOT-0000344,745,27,Critical (<30d),0,1
+Leukotriene receptor antagonist,Montelukast,8704.0,Midwest Distribution Center,WHLOT-0000384,473,23,Critical (<30d),0,1
+Osmotic laxative,Lactulose,14199.0,Southern Distribution Center,WHLOT-0000687,363,55,High Risk (31-60d),0,1
+Penicillin antibiotic,Amoxicillin,15444.0,Midwest Distribution Center,WHLOT-0000459,3646,653,Healthy (>90d),0,0
+SSRI antidepressant,Fluoxetine,11675.0,Southern Distribution Center,WHLOT-0000760,4692,850,Healthy (>90d),0,0
+Selective COX-2 inhibitor,Celecoxib,13214.0,New England Cold Chain Hub,WHLOT-0000912,1218,81,Moderate Risk (61-90d),0,1
+Short-acting antimuscarinic,Ipratropium Bromide,9452.0,New England Cold Chain Hub,WHLOT-0000411,379,9,Critical (<30d),0,1
