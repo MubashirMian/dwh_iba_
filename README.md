@@ -109,14 +109,13 @@ docker compose run --rm tools python scripts/push_all_metrics.py      # → prom
 └── Makefile
 ```
 
-## 🧠 Nerd Notes
+## Notes
 
 - **Why Postgres, not DuckDB?** DuckDB is single-writer and can't serve Grafana reads while dbt writes. DuckDB is used only for the up-front data verification.
 - **Source data is sacred.** SHA-256 checksums are locked at day 0 and written to `bronze.load_manifest` on every load.
 - **SCD2 isn't in the source.** `dim_medicine` has the SCD2 columns and is proven with a test fixture instead.
 - **Hospital double-counting trap.** 50,305 sales rows are hospital pharmacy; Q1' filters them out before comparing against hospital demand.
 - **Averages lie.** Shelf life is pack-weighted: `SUM(DaysToExpiry × Qty) / SUM(Qty)`.
-- **11 bugs fixed along the way**, including a PascalCase-vs-lowercase column mismatch that loaded empty rows and dbt creating `public_silver` instead of `silver`.
 
 ## 🧰 Stack
 
