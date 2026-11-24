@@ -91,7 +91,7 @@ docker compose run --rm tools python scripts/push_all_metrics.py      # → prom
 
 | Airflow DAG | dbt Lineage |
 |:-----------:|:-----------:|
-| ![Airflow](docs/images/airflow_dag.png) | ![dbt lineage](docs/images/dbt_lineage.png) |
+| ![Airflow](image.png) | ![dbt lineage](docs/images/dbt_lineage.png) |
 
 | Grafana · Ingestion | Grafana · Business Mart |
 |:-------------------:|:-----------------------:|
