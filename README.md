@@ -20,12 +20,6 @@ Everything runs from one `docker compose`.
 
 > **Phase 1:** Sales & Demand Intelligence (SDI) Mart · Data Analytics & Warehousing, Fall 2026
 
-<p align="center">
-  <img src="docs/images/architecture.png" alt="Architecture" width="100%" />
-</p>
-
----
-
 ## `$ cat pipeline.txt`
 
 ```
@@ -91,15 +85,15 @@ docker compose run --rm tools python scripts/push_all_metrics.py      # → prom
 
 | Airflow DAG | dbt Lineage |
 |:-----------:|:-----------:|
-| ![Airflow](image.png) | ![dbt lineage](docs/images/dbt_lineage.png) |
+| ![Airflow](image.png) | ![dbt lineage](dbt.png) |
 
-| Grafana · Ingestion | Grafana · Business Mart |
+| Grafana · Dashboards | Grafana · Ingestion|
 |:-------------------:|:-----------------------:|
-| ![Dashboard 1](docs/images/grafana_01_ingestion.png) | ![Dashboard 3](docs/images/grafana_03_business_mart.png) |
+| ![Dashboard 1](graphanan.png) | ![Dashboard 3](i.png) |
 
-| Grafana · dbt Tests | Grafana · Query Benchmarks |
-|:-------------------:|:--------------------------:|
-| ![Dashboard 4](docs/images/grafana_04_dbt_tests.png) | ![Dashboard 5](docs/images/grafana_05_query_benchmarks.png) |
+| Grafana · dbt Tests | 
+|:-------------------:|
+| ![Dashboard 4](t.png) |
 
 ## `$ tree -L 1`
 
